@@ -1,29 +1,26 @@
 const express = require('express');
-const mongoose = require('mongoose');
-// const cors = require('cors');
+const connectDB = require("./config/db");
+const cors = require('cors');
 const env = require('dotenv');
-const authRoutes = require ('./routes/auth') 
+
+const authRoutes = require("./routes/auth");
+const teamRoutes = require("./routes/team");
+const transferRoutes = require("./routes/transfer");
 
 const app = express();
 env.config();
 
+app.use(cors());
+
 const PORT =  5001;
 
-// app.use(cors());
 app.use(express.json());
 
-const connectDB = async () => {
-  try {
-    await mongoose.connect(process.env.MONGO_URI);
-    console.log("MongoDB connected ");
-  } catch (error) {
-    console.error("Error connecting to MongoDB:", error); 
-  }
-};
+app.use("/auth", authRoutes);
+app.use("/team", teamRoutes);
+app.use("/transfer", transferRoutes);
 
-app.use('/user', authRoutes);
-
-app.listen(PORT, () => {
+app.listen(process.env.PORT || 5001, () => {
   connectDB();
   console.log(`Server is running on port ${PORT}`);
 });
