@@ -1,9 +1,9 @@
-const Team = require("../models/team");
+const Team = require("../models/Team");
 const Player = require("../models/player");
 const {
   generateRandomName,
   generateRandomTeamName,
-} = require("../utils/nameGenerators");
+} = require("../utils/dummyData");
 
 exports.createInitialTeam = async (userId) => {
   try {

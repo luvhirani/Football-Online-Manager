@@ -1,16 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from "react";
+import { Routes, Route, Navigate } from "react-router-dom";
+import NavBar from "./components/Navbar";
+import AuthPage from "./features/auth/AuthPage";
+import HomePage from "./features/home/HomePage";
+import ProtectedRoute from "./components/ProtectedRoute";
+import { ToastContainer } from "react-toastify";
 
-function App() {
- 
-
+const App = () => {
   return (
     <>
-    
-    </>
-  )
-}
+      <NavBar />
+      <ToastContainer />
 
-export default App
+      <Routes>
+      <Route
+          path="*"
+          element={
+            <ProtectedRoute>
+              <Navigate to="/home" />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="/auth" element={<AuthPage />} />
+        <Route
+          path="/home"
+          element={
+            <ProtectedRoute>
+              <HomePage />
+            </ProtectedRoute>
+          }
+        />
+      </Routes>
+    </>
+  );
+};
+export default App;

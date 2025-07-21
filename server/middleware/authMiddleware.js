@@ -1,8 +1,10 @@
 const jwt = require("jsonwebtoken");
-const JWT_SECRET = "X9u5&d7C!pL2ePzF#1kQr8@wTxBmYjAoNvK%3*Gh";
+
 
 module.exports = (req, res, next) => {
+    console.log("authMiddlewareeeee")
   const authHeader = req.headers.authorization;
+  console.log("authHeaderrr:",authHeader)
   if (!authHeader) {
     return res
       .status(401)
@@ -17,8 +19,9 @@ module.exports = (req, res, next) => {
   }
 
   try {
-    const decoded = jwt.verify(token, JWT_SECRET);
+    const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded;
+    console.log("req.user:",req.user)
     next();
   } catch (error) {
     return res

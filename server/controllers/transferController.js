@@ -1,5 +1,5 @@
 const Player = require("../models/player");
-const Team = require("../models/team");
+const Team = require("../models/Team");
 
 exports.getTransferList = async (req, res) => {
   try {
