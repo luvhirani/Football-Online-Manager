@@ -1,6 +1,6 @@
 # Football-Online-Manager
 
-## 📋 Project Overview
+## Project Overview
 
 The app allows users to:
 - Register/login (with one unified form)
@@ -11,12 +11,12 @@ The app allows users to:
 - Filter players by name, team, and price
 - Maintain team size between 15–25 players
 
-## 🛠 Tech Stack
+## Tech Stack
 
-Frontend -> React, JavaScript 
-Backend -> Node.js, Express 
-DB -> MongoDB 
-Styling > Tailwind, MUI 
+Frontend -> React, JavaScript.
+Backend -> Node.js, Express. 
+DB -> MongoDB.
+Styling > Tailwind, MUI. 
 
 ---
 
@@ -33,48 +33,48 @@ Stay within the 15–25 player team rule
 ## Time Report
 
 FRONTEND -> 15 Hrs
-1. 🔐 Authentication UI -> 3 hrs
+1. Authentication UI -> 3 hrs
 Login/Registration single-page form
 Email/password fields with validation
 Feedback for errors and success
 Loading states 
 
-2. 🧑‍💼 Dashboard & Team View -> 3 hrs
+2. Dashboard & Team View -> 3 hrs
 Team summary (budget, total players)
 Player cards grouped by position
 
 
-3. 🔄 Transfer Market UI -> 4 hrs
+3. Transfer Market UI -> 4 hrs
 Filter UI (team name, player name, price)
 Player cards 
 Purchase action UI 
 
-4. ⚙️ State Management & Routing -> 5 hrs
+4. State Management & Routing -> 5 hrs
 Store & reducers (user, team, players)
 Page routing (Login, Team Dashboard, Transfer Market)
 Toasts and alerts (success, errors, validations)
 
-✅ BACKEND -> 16 Hrs
-1. 🔐 Auth System -> 2 hrs
+BACKEND -> 16 Hrs
+1. Auth System -> 2 hrs
 Unified registration/login route
 JWT-based session management
 Password hashing (bcrypt)
 
-2. ⚙️ Team Generation Logic -> 5 hrs
+2. Team Generation Logic -> 5 hrs
 Async function triggered on user creation
 Generates 20 players using predefined rules
 3 Goalkeepers, 6 Defenders, 6 Midfielders, 5 Attackers
 Assign initial transfer budget ($5M)
 Store team and player data
 
-3. 🏟️ Transfer Market APIs -> 7 hrs
+3. Transfer Market APIs -> 7 hrs
 Filtered transfer list
 Add player to market with asking price
 Remove player
 Buy player 
 Validation: team must have 15–25 players post-transfer
 
-4. 🔄 Background Processes -> 2 hrs
+4. Background Processes -> 2 hrs
 Team generation queued process (to simulate delay)
 
 
