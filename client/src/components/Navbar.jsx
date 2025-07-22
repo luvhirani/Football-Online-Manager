@@ -19,12 +19,12 @@ const NavBar = () => {
     <AppBar
       position="static"
       sx={{
-        backgroundColor: "#00BF63",
+        backgroundColor: "#00BF63", 
         boxShadow: "0 4px 12px rgba(0, 0, 0, 0.2)",
       }}
     >
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-        {/* Title */}
+        
         <Typography
           variant="h6"
           component={NavLink}
@@ -40,7 +40,36 @@ const NavBar = () => {
           ⚽ Football Manager
         </Typography>
 
-        {/* Logout Button */}
+        
+        <Box sx={{ display: "flex", gap: 2 }}>
+          {token && (
+            <>
+              <Button
+                component={NavLink}
+                to="/my-team"
+                sx={({ isActive }) => ({
+                  color: "#fff",
+                  fontWeight: isActive ? "bold" : "normal",
+                  textDecoration: isActive ? "underline" : "none",
+                })}
+              >
+                My Team
+              </Button>
+              <Button
+                component={NavLink}
+                to="/transfer-market"
+                sx={({ isActive }) => ({
+                  color: "#fff",
+                  fontWeight: isActive ? "bold" : "normal",
+                  textDecoration: isActive ? "underline" : "none",
+                })}
+              >
+                Transfer Market
+              </Button>
+            </>
+          )}
+        </Box>
+
         {token && (
           <Button
             color="inherit"

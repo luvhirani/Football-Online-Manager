@@ -39,11 +39,7 @@ exports.getTransferList = async (req, res) => {
   }
 };
 
-/**
- * POST /api/transfer/list-player
- * Body: { playerId, askingPrice }
- * Sets a player's isTransferListed to true
- */
+
 exports.listPlayer = async (req, res) => {
   try {
     const userId = req.user.userId;
@@ -70,11 +66,7 @@ exports.listPlayer = async (req, res) => {
   }
 };
 
-/**
- * POST /api/transfer/unlist-player
- * Body: { playerId }
- * Removes a player from the transfer list
- */
+
 exports.unlistPlayer = async (req, res) => {
   try {
     const userId = req.user.userId;

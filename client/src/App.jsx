@@ -3,6 +3,8 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import NavBar from "./components/Navbar";
 import AuthPage from "./features/auth/AuthPage";
 import HomePage from "./features/home/HomePage";
+import TeamPage from "./features/team/TeamPage";
+import TransferMarketPage from "./features/transfer/TransferMarketPage";
 import ProtectedRoute from "./components/ProtectedRoute";
 import { ToastContainer } from "react-toastify";
 
@@ -13,7 +15,7 @@ const App = () => {
       <ToastContainer />
 
       <Routes>
-      <Route
+        <Route
           path="*"
           element={
             <ProtectedRoute>
@@ -30,6 +32,23 @@ const App = () => {
             </ProtectedRoute>
           }
         />
+        <Route
+          path="/my-team"
+          element={
+            <ProtectedRoute>
+              <TeamPage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/transfer-market"
+          element={
+            <ProtectedRoute>
+              <TransferMarketPage />
+            </ProtectedRoute>
+          }
+        />
+     
       </Routes>
     </>
   );
