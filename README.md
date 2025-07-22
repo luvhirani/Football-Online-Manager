@@ -11,6 +11,8 @@ The app allows users to:
 - Filter players by name, team, and price
 - Maintain team size between 15–25 players
 
+---
+
 ## Tech Stack
 
 Frontend -> React, JavaScript.
@@ -20,7 +22,6 @@ Styling > Tailwind, MUI.
 
 ---
 
-
 ## Usage Instructions
 Register or log in with an email/password
 Your squad will be generated asynchronously
@@ -29,6 +30,31 @@ Browse and filter the transfer market
 List your own players or buy others'
 Stay within the 15–25 player team rule
 
+---
+
+## Getting Started
+
+##  Setup Instructions
+
+### 1. Clone the repository
+```bash
+git clone https://github.com/luvhirani/Football-Online-Manager.git
+cd Football-Online-Manager
+
+2. Backend Setup
+cd server
+npm install
+npm run dev
+
+Ensure the backend server is running (http://localhost:5001)
+
+3 Frontend Setup
+cd client
+npm install
+npm run dev
+
+it will start the frontend on the port 5173 (http://localhost:5173)
+---
 
 ## Time Report
 
@@ -76,7 +102,6 @@ Validation: team must have 15–25 players post-transfer
 
 4. Background Processes -> 2 hrs
 Team generation queued process (to simulate delay)
-
 
 ✅ DATABASE (MongoDB) -> 3 hrs
 1. 👥 Users Collection

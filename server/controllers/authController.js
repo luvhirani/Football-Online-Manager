@@ -5,7 +5,6 @@ const jwt = require("jsonwebtoken");
 const { createInitialTeam } = require("./teamController");
 
 exports.handleAuth = async (req, res) => {
-  console.log("authhh")
   try {
     const { email, password } = req.body;
     let isNewUser = false;
@@ -24,7 +23,7 @@ exports.handleAuth = async (req, res) => {
         return res.status(400).json({ message: "Invalid credentials" });
       }
     }
-    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
+    const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET || "CALO", {
       expiresIn: "7d",
     });
     return res.json({

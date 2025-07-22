@@ -2,9 +2,7 @@ const jwt = require("jsonwebtoken");
 
 
 module.exports = (req, res, next) => {
-    console.log("authMiddlewareeeee")
   const authHeader = req.headers.authorization;
-  console.log("authHeaderrr:",authHeader)
   if (!authHeader) {
     return res
       .status(401)
@@ -21,7 +19,6 @@ module.exports = (req, res, next) => {
   try {
     const decoded = jwt.verify(token, process.env.JWT_SECRET);
     req.user = decoded;
-    console.log("req.user:",req.user)
     next();
   } catch (error) {
     return res
